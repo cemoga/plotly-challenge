@@ -6,7 +6,7 @@ import numpy as np
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine    
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
@@ -100,7 +100,7 @@ def samples(sample):
     }
     return jsonify(data)
 
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 
+
 
 if __name__ == "__main__":
     app.run()

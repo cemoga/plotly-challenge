@@ -1,0 +1,81 @@
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    .chart {
+      max-height: calc(200px + 20px) !important;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="myDiv" class="chart">
+    <!-- Plotly chart will be drawn inside this DIV -->
+  </div>
+  <script>
+    // Enter a speed between 0 and 180
+    var level = 50;
+    // Trig to calc meter point
+    var degrees = 180 - level,
+      radius = .5;
+    var radians = degrees * Math.PI / 180;
+    var aX = 0.025 * Math.cos((degrees - 90) * Math.PI / 180);
+    var aY = 0.025 * Math.sin((degrees - 90) * Math.PI / 180);
+    var bX = -0.025 * Math.cos((degrees - 90) * Math.PI / 180);
+    var bY = -0.025 * Math.sin((degrees - 90) * Math.PI / 180);
+    var cX = radius * Math.cos(radians);
+    var cY = radius * Math.sin(radians);
+    var path = 'M ' + aX + ' ' + aY +
+      ' L ' + bX + ' ' + bY +
+      ' L ' + cX + ' ' + cY +
+      ' Z';
+    var data = [
+      {
+        values: [1, 1, 1, 1, 4],
+        rotation: 90,
+        text: ['Excellent', 'Average', 'Warning', 'Poor', ''],
+        textinfo: 'text',
+        textposition: 'inside',
+        marker: {
+          colors: ['rgba(14, 127, 0, .5)', 'rgba(110, 154, 22, .5)',
+            'rgba(249, 168, 37, .5)', 'rgba(183,28,28, .5)',
+            'rgba(0, 0, 0, 0.5)'
+          ]
+        },
+        hoverinfo: 'label',
+        hole: .5,
+        type: 'pie',
+        showlegend: false
+      }
+    ];
+    var layout = {
+      shapes: [{
+        type: 'path',
+        path: path,
+        fillcolor: '850000',
+        line: {
+          color: '850000'
+        }
+      }],
+      height: 400,
+      width: 400,
+      xaxis: {
+        zeroline: false,
+        showticklabels: false,
+        showgrid: false,
+				fixedrange: true,
+        range: [-1, 1]
+      },
+      yaxis: {
+        zeroline: false,
+        showticklabels: false,
+        showgrid: false,
+				fixedrange: true,
+        range: [-1, 1]
+      }
+    };
+    Plotly.newPlot('myDiv', data, layout);
+  </script>
+</body>

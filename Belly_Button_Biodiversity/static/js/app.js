@@ -41,13 +41,18 @@ function buildMetadata(sample) {
         {
           domain: { x: [0, 1], y: [0, 1] },
           value: response.WFREQ,
-          title: { text: "Speed" },
+          // title: { text: title = '<b>Belly Button Washing Frequency</b> <br><i>Scrubs per Week</i>' },
+
+          title: {font: {size: 15}, text: title = '<b>Belly Button Washing Frequency</b> <br><i>Scrubs per Week</i>' }, margin: {l: 10, r:10},
           type: "indicator",
           mode: "gauge+number",
+
           gauge: {
-            axis: { range: [null, 9] },
+            shape: "angular",
+            bar: { color: 'rgb(112, 0,1)' },
+            axis: { range: [null, 9], dtick: 1 },
             steps: [
-              { range: [0, 1], color: 'rgb(246, 240,231)' },
+              { range: [0, 1], color: 'rgb(246,240,231)' },
               { range: [1, 2], color: 'rgb(241,238,222)' },
               { range: [2, 3], color: 'rgb(228,226,189)' },
               { range: [3, 4], color: 'rgb(223,228,161)' },
@@ -56,15 +61,16 @@ function buildMetadata(sample) {
               { range: [6, 7], color: 'rgb(122,182,115)' },
               { range: [7, 8], color: 'rgb(119,176,123)' },
               { range: [8, 9], color: 'rgb(114,168,118)' }
-
             ]
-
-
           }
         }
       ];
 
-      var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+      var layout = {
+        // width: 800,
+        // height: 500,
+        margin: { t: 10, b: 0, l: 15, r: 15 },
+      };
       Plotly.newPlot("gauge", data, layout, { responsive: true });
     });
 
@@ -107,10 +113,11 @@ function buildCharts(sample) {
     var data = [trace1];
 
     var layout = {
-      title: 'Marker Size',
+      xaxis: { title: '<b>OTU ID</b>' },
       showlegend: false,
       // height: 600,
       // width: 600
+      // margin: { t: 0, b: 0, l: 0, r: 0 }
     };
 
     Plotly.newPlot('bubble', data, layout, { responsive: true });
@@ -135,8 +142,9 @@ function buildCharts(sample) {
     }];
 
     var layout = {
-      height: 500,
-      width: 500
+      // height: 500,
+      // width: 500
+      margin: { t: 0, b: 0, l: 0, r: 0 }
     };
 
     Plotly.newPlot('pie', trace1, layout, { responsive: true });
