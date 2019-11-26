@@ -117,7 +117,7 @@ function buildCharts(sample) {
       showlegend: false,
       // height: 600,
       // width: 600
-      // margin: { t: 0, b: 0, l: 0, r: 0 }
+      margin: { t: 0, b: 30, l: 30, r: 30 }
     };
 
     Plotly.newPlot('bubble', data, layout, { responsive: true });
