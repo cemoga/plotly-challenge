@@ -36,17 +36,13 @@ function buildMetadata(sample) {
     // BONUS: Build the Gauge Chart
     // buildGauge(data.WFREQ);
     d3.json(url).then(function (response) {
-
       var data = [
         {
           domain: { x: [0, 1], y: [0, 1] },
           value: response.WFREQ,
-          // title: { text: title = '<b>Belly Button Washing Frequency</b> <br><i>Scrubs per Week</i>' },
-
           title: {font: {size: 15}, text: title = '<b>Belly Button Washing Frequency</b> <br><i>Scrubs per Week</i>' }, margin: {l: 10, r:10},
           type: "indicator",
           mode: "gauge+number",
-
           gauge: {
             shape: "angular",
             bar: { color: 'rgb(112, 0,1)' },
@@ -73,12 +69,8 @@ function buildMetadata(sample) {
       };
       Plotly.newPlot("gauge", data, layout, { responsive: true });
     });
-
   });
 };
-
-
-
 
 function buildCharts(sample) {
 
@@ -87,7 +79,6 @@ function buildCharts(sample) {
   console.log("url: ", url)
   // @TODO: Build a Bubble Chart using the sample data
   d3.json(url).then(function (response) {
-
     console.log("response: ", response);
 
     var y = response.sample_values;
@@ -121,13 +112,11 @@ function buildCharts(sample) {
     };
 
     Plotly.newPlot('bubble', data, layout, { responsive: true });
-
   });
   // @TODO: Build a Pie Chart
   // HINT: You will need to use slice() to grab the top 10 sample_values,
   // otu_ids, and labels (10 each).
   d3.json(url).then(function (response) {
-
     console.log("response: ", response);
 
     var values = response.sample_values.slice(0, 10);
