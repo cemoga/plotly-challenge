@@ -1,1 +1,1 @@
-web: gunicorn app:Belly_Button_Biodiversity/app.py
+web: gunicorn app:Belly_Button_Biodiversity.app
