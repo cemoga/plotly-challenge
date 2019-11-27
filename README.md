@@ -4,7 +4,7 @@
 The goal of the project was to create an app and deploy it to `Heroku` (Cloud Application Platform).
 The app runs a `Flask` server that renders the `index.html` file. The `Javascript` code queries an `sqlite` database, create a chart and plot the data using `D3` and `Plottly` libraries.
 - The app deployed in Heroku can be found in the link below:
-`https://belly-button-biodiversity-cmg.herokuapp.com`
+- `https://belly-button-biodiversity-cmg.herokuapp.com`
 
 ### App Running 
 <hr>
