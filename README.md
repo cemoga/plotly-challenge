@@ -38,17 +38,17 @@ Click the link below or type it in your web browser
 - `https://belly-button-biodiversity-cmg.herokuapp.com`
 
 # File Description
-### - `app.py`
+### - app.py
 - Contains the code to run the `flask`server to run the app
-### - `db`
+### - db
 - Contains the `Sqlite` databases queried by the app
-### - `Procfile``
+### - Procfile
 - Contains the instructions for `Heroku` to run the app on their server
-### - `requirements.txt``
+### - requirements.txt
 - Contains the libraries for `Heroku`to install in the server to run the app
-### - `Screenshots`
+### - Screenshots
 - Contains the `gif` and `png` files with screenshots of the app running
-### - `Static``
+### - Static
 - Contains the `Javascript` code to plot and create tables in the `index.html` file
-### - `templates`
+### - templates
 - Contains the `html` file with the template to be used by `Javascript` to plot and create tables after the `app.py` file queries the `Sqlite`database
